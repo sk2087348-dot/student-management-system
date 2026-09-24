@@ -36,6 +36,15 @@ Student Management System/
 1. Install Python
 2. Install MySQL
 3. Install MySQL Connector:
+## Installation
+
+Clone the repository:
+
+git clone https://github.com/sk2087348-dot/student-management-system.git
+
+Install the required package:
+
+pip install -r requirements.txt
    `pip install mysql-connector-python`
 4. Create the `management_system` database in MySQL
 5. Run the Python file
