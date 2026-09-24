@@ -12,6 +12,18 @@ A simple Student Management System built with the  Python and MySQL.
 - Python
 - MySQL
 - MySQL Connector
+## Database
+
+MySQL database is used to store and manage student records.
+
+## Functionality
+
+- Add new student records
+- View all student records
+- Search students by name
+- Update student name and age
+- Delete student records
+- Validate user input
 
 ## Project Structure
 
