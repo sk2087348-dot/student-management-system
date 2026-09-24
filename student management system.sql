@@ -1,0 +1,26 @@
+-- CREATE DATABASE  management_system;
+use management_system;
+-- CREATE TABLE Student_management(
+--   student_id INT PRIMARY KEY AUTO_INCREMENT,
+--    name varchar(100)  not NULL ,
+--    AGE INT,
+--    GENDER varchar(100) NOT NULL,
+--    CITY varchar(100),
+--    department varchar(100) );
+--  INSERT INTO student_management
+-- (name, age, gender, city, department)
+-- VALUES
+-- ('Ali Khan', 20, 'Male', 'Sargodha', 'Computer Science'),
+-- ('Ayesha Malik', 21, 'Female', 'Lahore', 'Artificial Intelligence'),
+-- ('Hamza Ahmed', 19, 'Male', 'karachi', 'Software Engineering'),
+-- ('Fatima Noor', 22, 'Female', 'karak', 'Information Technology'),
+-- ('Usman Raza', 20, 'Male', 'kohat', 'Data Science');
+--    select name,department  from student_management;
+-- select * from student_management where city='karak';
+ -- select *  from student_management order by age asc;
+ -- select count(*) AS total_students from student_management;
+-- rename table student_management to students;
+-- select * FROM STUDENTS;
+-- select * from students where name ="MUHAMMAD SAQIB"; 
+-- desc students;
+select* FROM STUDENTS ;
