@@ -1,0 +1,746 @@
+/* =========================================
+   STUDENT MANAGEMENT SYSTEM
+   PROFESSIONAL UI
+   ========================================= */
+
+
+/* =========================================
+   GLOBAL
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f1f5f9;
+
+    color: #0f172a;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.top-header {
+    background: linear-gradient(
+        135deg,
+        #1e3a8a,
+        #2563eb
+    );
+
+    color: white;
+
+    padding: 32px 40px;
+
+    box-shadow:
+        0 4px 15px rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
+}
+
+
+.top-header h1 {
+    font-size: 32px;
+
+    font-weight: 700;
+
+    margin-bottom: 6px;
+}
+
+
+.top-header p {
+    color: #dbeafe;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+main {
+    width: 92%;
+
+    max-width: 1250px;
+
+    margin: 35px auto;
+}
+
+
+/* =========================================
+   DASHBOARD
+   ========================================= */
+
+#dashboard h2 {
+    font-size: 26px;
+
+    margin-bottom: 22px;
+
+    color: #0f172a;
+}
+
+
+/* =========================================
+   DASHBOARD CARDS
+   ========================================= */
+
+.dashboard-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+.card {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 5px 15px rgba(
+            15,
+            23,
+            42,
+            0.08
+        );
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(
+            15,
+            23,
+            42,
+            0.12
+        );
+}
+
+
+.dashboard-cards .card {
+    text-align: center;
+}
+
+
+.dashboard-cards .card h3 {
+    color: #475569;
+
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+
+.dashboard-cards .card p {
+    color: #1e3a8a;
+
+    font-size: 38px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   DASHBOARD BUTTONS
+   ========================================= */
+
+.dashboard-actions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 12px;
+
+    margin: 30px 0;
+}
+
+
+.dashboard-actions button {
+    background: white;
+
+    color: #1e3a8a;
+
+    border: 1px solid #bfdbfe;
+
+    padding: 14px 12px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.dashboard-actions button:hover {
+    background: #1e3a8a;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+.dashboard-actions button.active {
+    background: #1e3a8a;
+
+    color: white;
+
+    border-color: #1e3a8a;
+
+    box-shadow:
+        0 5px 12px rgba(
+            30,
+            58,
+            138,
+            0.25
+        );
+}
+
+
+/* =========================================
+   CONTENT SECTIONS
+   ========================================= */
+
+.content-section {
+    display: none;
+
+    background: white;
+
+    padding: 32px;
+
+    margin-top: 25px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 5px 15px rgba(
+            15,
+            23,
+            42,
+            0.07
+        );
+}
+
+
+.content-section h2 {
+    color: #1e3a8a;
+
+    font-size: 24px;
+
+    margin-bottom: 25px;
+
+    padding-bottom: 12px;
+
+    border-bottom:
+        2px solid #e2e8f0;
+}
+
+
+/* =========================================
+   FORM LAYOUT
+   ========================================= */
+
+#student-form,
+#update-section {
+    width: 100%;
+}
+
+
+/* Make form fields look clean */
+
+label {
+    display: block;
+
+    margin-top: 16px;
+
+    margin-bottom: 7px;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+input,
+select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    background: white;
+
+    color: #0f172a;
+
+    border:
+        1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            37,
+            99,
+            235,
+            0.12
+        );
+}
+
+
+/* =========================================
+   FORM BUTTONS
+   ========================================= */
+
+.primary-btn {
+    background: #1e3a8a;
+
+    color: white;
+
+    border: none;
+
+    padding: 13px 22px;
+
+    margin-top: 22px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.primary-btn:hover {
+    background: #172554;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(
+            30,
+            58,
+            138,
+            0.25
+        );
+}
+
+
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   DELETE BUTTON
+   ========================================= */
+
+.delete-btn {
+    background: #dc2626;
+
+    color: white;
+
+    border: none;
+
+    padding: 13px 22px;
+
+    margin-top: 22px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.delete-btn:hover {
+    background: #b91c1c;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(
+            220,
+            38,
+            38,
+            0.2
+        );
+}
+
+
+/* =========================================
+   MESSAGES
+   ========================================= */
+
+#success-message {
+    color: #15803d;
+
+    background: #f0fdf4;
+
+    border:
+        1px solid #bbf7d0;
+
+    padding: 10px 12px;
+
+    border-radius: 7px;
+
+    margin-top: 15px;
+
+    font-weight: 600;
+}
+
+
+#update-message {
+    color: #1d4ed8;
+
+    background: #eff6ff;
+
+    border:
+        1px solid #bfdbfe;
+
+    padding: 10px 12px;
+
+    border-radius: 7px;
+
+    margin-top: 15px;
+
+    font-weight: 600;
+}
+
+
+#delete-message {
+    color: #b91c1c;
+
+    background: #fef2f2;
+
+    border:
+        1px solid #fecaca;
+
+    padding: 10px 12px;
+
+    border-radius: 7px;
+
+    margin-top: 15px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   TABLE
+   ========================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-radius: 10px;
+
+    border:
+        1px solid #e2e8f0;
+}
+
+
+table {
+    width: 100%;
+
+    min-width: 700px;
+
+    border-collapse: collapse;
+
+    background: white;
+}
+
+
+th,
+td {
+    padding: 14px 15px;
+
+    border-bottom:
+        1px solid #e2e8f0;
+
+    text-align: left;
+
+    font-size: 14px;
+}
+
+
+th {
+    background: #1e3a8a;
+
+    color: white;
+
+    font-weight: 600;
+}
+
+
+td {
+    color: #334155;
+}
+
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+/* =========================================
+   SEARCH RESULT
+   ========================================= */
+
+#search-result {
+    margin-top: 22px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
+
+    gap: 18px;
+}
+
+
+#search-result .card {
+    margin: 0;
+}
+
+
+#search-result .card h3 {
+    color: #1e3a8a;
+
+    margin-bottom: 12px;
+}
+
+
+#search-result .card p {
+    color: #475569;
+
+    margin: 5px 0;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background: #172554;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 28px 20px;
+
+    margin-top: 55px;
+}
+
+
+footer p {
+    margin: 5px;
+
+    color: #dbeafe;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .dashboard-cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .dashboard-actions {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+
+    .top-header {
+        padding: 24px 20px;
+    }
+
+
+    .top-header h1 {
+        font-size: 25px;
+    }
+
+
+    .top-header p {
+        font-size: 14px;
+    }
+
+
+    main {
+        width: 94%;
+
+        margin: 25px auto;
+    }
+
+
+    #dashboard h2 {
+        font-size: 22px;
+    }
+
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .dashboard-actions {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    .dashboard-actions button {
+        width: 100%;
+    }
+
+
+    .content-section {
+        padding: 22px 18px;
+    }
+
+
+    .content-section h2 {
+        font-size: 21px;
+    }
+
+
+    input,
+    select {
+        padding: 12px;
+    }
+
+
+    .primary-btn,
+    .delete-btn {
+        width: 100%;
+    }
+
+
+    footer {
+        margin-top: 35px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 400px) {
+
+    .top-header h1 {
+        font-size: 22px;
+    }
+
+
+    .top-header p {
+        font-size: 13px;
+    }
+
+
+    .content-section {
+        padding: 18px 14px;
+    }
+
+
+    .dashboard-cards .card p {
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management System</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-header">
+
+        <div>
+
+            <h1>Student Management System</h1>
+
+            <p>Manage student records easily</p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard">
+
+            <h2>Dashboard</h2>
+
+
+            <div class="dashboard-cards">
+
+
+                <div class="card">
+
+                    <h3>Total Students</h3>
+
+                    <p id="total-students">0</p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Male</h3>
+
+                    <p id="male-students">0</p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Female</h3>
+
+                    <p id="female-students">0</p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <section class="dashboard-actions">
+
+            <button onclick="showSection('add-section')">
+                Add Student
+            </button>
+
+
+            <button onclick="showSection('view-section')">
+                View Students
+            </button>
+
+
+            <button onclick="showSection('search-section')">
+                Search Student
+            </button>
+
+
+            <button onclick="showSection('update-section')">
+                Update Student
+            </button>
+
+
+            <button onclick="showSection('delete-section')">
+                Delete Student
+            </button>
+
+        </section>
+
+
+
+        <!-- ================= ADD STUDENT ================= -->
+
+        <section id="add-section" class="content-section">
+
+            <h2>Add Student</h2>
+
+
+            <form id="student-form">
+
+
+                <label for="student-name">
+                    Student Name
+                </label>
+
+
+                <input
+                    type="text"
+                    id="student-name"
+                    placeholder="Enter student name"
+                >
+
+
+
+                <label for="student-age">
+                    Age
+                </label>
+
+
+                <input
+                    type="number"
+                    id="student-age"
+                    placeholder="Enter student age"
+                >
+
+
+
+                <label for="student-gender">
+                    Gender
+                </label>
+
+
+                <select id="student-gender">
+
+                    <option value="">
+                        Select Gender
+                    </option>
+
+                    <option value="Male">
+                        Male
+                    </option>
+
+                    <option value="Female">
+                        Female
+                    </option>
+
+                </select>
+
+
+
+                <label for="student-city">
+                    City
+                </label>
+
+
+                <input
+                    type="text"
+                    id="student-city"
+                    placeholder="Enter city"
+                >
+
+
+
+                <label for="student-department">
+                    Department
+                </label>
+
+
+                <input
+                    type="text"
+                    id="student-department"
+                    placeholder="Enter department"
+                >
+
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Add Student
+                </button>
+
+
+                <p id="success-message"></p>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!-- ================= VIEW STUDENTS ================= -->
+
+        <section
+            id="view-section"
+            class="content-section"
+        >
+
+            <h2>Students List</h2>
+
+
+            <div class="table-container">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Name</th>
+
+                            <th>Age</th>
+
+                            <th>Gender</th>
+
+                            <th>City</th>
+
+                            <th>Department</th>
+
+                        </tr>
+
+                    </thead>
+
+
+
+                    <tbody id="student-table-body">
+
+                        <tr>
+
+                            <td colspan="6">
+
+                                No students available.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= SEARCH STUDENT ================= -->
+
+        <section
+            id="search-section"
+            class="content-section"
+        >
+
+            <h2>Search Student</h2>
+
+
+
+            <label for="search-id">
+                Search by Student ID
+            </label>
+
+
+            <input
+                type="number"
+                id="search-id"
+                placeholder="Enter student ID"
+            >
+
+
+            <button
+                class="primary-btn"
+                id="search-id-btn"
+            >
+                Search by ID
+            </button>
+
+
+
+            <label for="search-input">
+                Search by Student Name
+            </label>
+
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Enter student name"
+            >
+
+
+            <button
+                class="primary-btn"
+                id="search-btn"
+            >
+                Search by Name
+            </button>
+
+
+
+            <div id="search-result"></div>
+
+
+        </section>
+
+
+
+        <!-- ================= UPDATE STUDENT ================= -->
+
+        <section
+            id="update-section"
+            class="content-section"
+        >
+
+            <h2>Update Student</h2>
+
+
+
+            <label for="update-id">
+                Student ID
+            </label>
+
+
+            <input
+                type="number"
+                id="update-id"
+                placeholder="Enter student ID"
+            >
+
+
+
+            <label for="update-name">
+                New Name
+            </label>
+
+
+            <input
+                type="text"
+                id="update-name"
+                placeholder="Enter new name"
+            >
+
+
+
+            <label for="update-age">
+                New Age
+            </label>
+
+
+            <input
+                type="number"
+                id="update-age"
+                placeholder="Enter new age"
+            >
+
+
+
+            <label for="update-gender">
+                New Gender
+            </label>
+
+
+            <select id="update-gender">
+
+                <option value="">
+                    Select Gender
+                </option>
+
+                <option value="Male">
+                    Male
+                </option>
+
+                <option value="Female">
+                    Female
+                </option>
+
+            </select>
+
+
+
+            <label for="update-city">
+                New City
+            </label>
+
+
+            <input
+                type="text"
+                id="update-city"
+                placeholder="Enter new city"
+            >
+
+
+
+            <label for="update-department">
+                New Department
+            </label>
+
+
+            <input
+                type="text"
+                id="update-department"
+                placeholder="Enter new department"
+            >
+
+
+
+            <button
+                class="primary-btn"
+                id="update-btn"
+            >
+                Update Student
+            </button>
+
+
+            <p id="update-message"></p>
+
+
+        </section>
+
+
+
+        <!-- ================= DELETE STUDENT ================= -->
+
+        <section
+            id="delete-section"
+            class="content-section"
+        >
+
+            <h2>Delete Student</h2>
+
+
+
+            <label for="delete-id">
+                Student ID
+            </label>
+
+
+            <input
+                type="number"
+                id="delete-id"
+                placeholder="Enter student ID"
+            >
+
+
+
+            <button
+                class="delete-btn"
+                id="delete-btn"
+            >
+                Delete Student
+            </button>
+
+
+            <p id="delete-message"></p>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            Student Management System
+        </p>
+
+        <p>
+            Built with Python, MySQL, HTML, CSS & JavaScript
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+
+</body>
+
+</html>
