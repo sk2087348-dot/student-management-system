@@ -80,7 +80,7 @@ CREATE DATABASE management_system;
 Open the terminal in the project folder and run:
 
 ```bash
-pip install flask mysql-connector-python
+pip install -r requirements.txt
 ```
 
 ### 4. Configure MySQL Connection
